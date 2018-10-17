@@ -47,7 +47,6 @@ public class TreeBuilder {
         
         private int index;
 
-        @Override
         public void handle(IAtomContainer parent, IAtomContainer child, boolean isCanonical) {
             if (canonicalOnly && !isCanonical) return;
             

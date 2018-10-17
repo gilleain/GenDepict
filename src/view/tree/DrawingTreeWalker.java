@@ -21,7 +21,6 @@ public class DrawingTreeWalker implements TreeWalker {
         return drawRoot;
     }
 
-    @Override
     public void walk(Node parent, Node node) {
         DrawNode current;
         DrawNode parentDrawNode;

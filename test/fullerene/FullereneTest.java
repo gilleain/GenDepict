@@ -128,12 +128,13 @@ public class FullereneTest {
     }
     
     private void refineOld(IAtomContainer ac, org.openscience.cdk.group.Partition coarse) {
-        org.openscience.cdk.group.AtomDiscretePartitionRefiner parent
-            = new org.openscience.cdk.group.AtomDiscretePartitionRefiner();
-        parent.getAutomorphismGroup(ac);
-        org.openscience.cdk.group.AtomEquitablePartitionRefiner refiner =
-                new org.openscience.cdk.group.AtomEquitablePartitionRefiner(parent);
-        System.out.println(refiner.refine(coarse));
+        System.exit(0); // TODO - commented below out, as deprecated in 1.5.15
+//        org.openscience.cdk.group.AtomDiscretePartitionRefiner parent
+//            = new org.openscience.cdk.group.AtomDiscretePartitionRefiner();
+//        parent.getAutomorphismGroup(ac);
+//        org.openscience.cdk.group.AtomEquitablePartitionRefiner refiner =
+//                new org.openscience.cdk.group.AtomEquitablePartitionRefiner(parent);
+//        System.out.println(refiner.refine(coarse));
     }
     
     private org.openscience.cdk.group.Partition colorZeroOld(int n) {

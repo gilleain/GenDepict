@@ -9,8 +9,7 @@ import org.openscience.cdk.exception.CDKException;
 import org.openscience.cdk.interfaces.IAtomContainer;
 import org.openscience.cdk.interfaces.IChemObjectBuilder;
 import org.openscience.cdk.signature.MoleculeSignature;
-import org.openscience.cdk.smsd.Isomorphism;
-import org.openscience.cdk.smsd.interfaces.Algorithm;
+import org.openscience.smsd.Isomorphism;
 
 import io.AtomContainerPrinter;
 import io.IteratingACPReader;
@@ -33,13 +32,9 @@ public class FilterTool {
 
         @Override
         public boolean matches(IAtomContainer target) {
-            isomorphism = new Isomorphism(Algorithm.MCSPlus, true);
-            try {
-                isomorphism.init(query, target, true, true);
-            } catch (CDKException e) {
-                // TODO Auto-generated catch block
-                e.printStackTrace();
-            }
+            isomorphism = new Isomorphism(
+                    query, target, org.openscience.smsd.interfaces.Algorithm.MCSPlus, 
+                    true, true, true);  // XXX assume all true? bondType, rings, atomType
             return isomorphism.isSubgraph();
         }
     }
